@@ -16,7 +16,23 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+ 
+    //AlertViewの設定
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"今日アクティビティ行きますか？" message:@"行きます？" delegate:self cancelButtonTitle:@"Cancel" otherButtonTitles:@"OK", nil];
+    
+    //設定したAlertViewを表示
+    [alert show];
+    
+}
+
+//ボタンがクリックされた時に、どのボタンが押されたか識別できるメソッド
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+
+    if (buttonIndex == 1) {
+        NSLog(@"OK");
+    }else{
+        NSLog(@"Cancel");
+    }
 }
 
 - (void)didReceiveMemoryWarning {
